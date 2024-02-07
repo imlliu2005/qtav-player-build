@@ -1,0 +1,23 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "QtBuild",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "c:/Qt/Qt5.14.2/5.14.2/msvc2017_64/bin"
+                }
+            ],
+            "console": "integratedTerminal",
+            "visualizerFile": "c:\\Users\\imliu\\AppData\\Roaming\\Code\\User\\workspaceStorage\\1310f7f6f94b06c1ed6b5764803282aa\\tonka3000.qtvsctools\\qt.natvis.xml"
+        }
+    ]
+}

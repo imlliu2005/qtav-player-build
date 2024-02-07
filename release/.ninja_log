@@ -1,0 +1,26 @@
+# ninja log v5
+1	148	0	CMakeFiles/av_player_autogen	d07c46f9cf25600a
+1	148	0	D:/work/qtav-player-build-dll/release/CMakeFiles/av_player_autogen	d07c46f9cf25600a
+1	148	0	av_player_autogen/mocs_compilation.cpp	d07c46f9cf25600a
+1	148	0	D:/work/qtav-player-build-dll/release/av_player_autogen/mocs_compilation.cpp	d07c46f9cf25600a
+148	1366	7287180976103687	CMakeFiles/av_player.dir/av_player_autogen/mocs_compilation.cpp.obj	b1042537c059a58f
+1398	1506	7287180977499330	D:/work/qtav-player-build-dll/lib/release/av_player.dll	7adba13ab452d728
+151	1398	7287180976423760	CMakeFiles/av_player.dir/src/av_player.cpp.obj	85fd8b20064e990b
+1398	1506	7287180977499330	D:/work/qtav-player-build-dll/lib/release/av_player.lib	7adba13ab452d728
+9	265	7289819078920798	build.ninja	c84ffac86a1e4a1c
+2	164	0	CMakeFiles/av_player_autogen	d07c46f9cf25600a
+2	164	0	av_player_autogen/mocs_compilation.cpp	d07c46f9cf25600a
+2	164	0	D:/work/qtav-player-build-dll/release/CMakeFiles/av_player_autogen	d07c46f9cf25600a
+2	164	0	D:/work/qtav-player-build-dll/release/av_player_autogen/mocs_compilation.cpp	d07c46f9cf25600a
+164	1229	7289819091494457	CMakeFiles/av_player.dir/av_player_autogen/mocs_compilation.cpp.obj	b1042537c059a58f
+167	1264	7289819091854749	CMakeFiles/av_player.dir/src/av_player.cpp.obj	85fd8b20064e990b
+1264	1368	7289819092898255	D:/work/qtav-player-build-dll/lib/release/av_player.dll	7adba13ab452d728
+1264	1368	7289819092898255	D:/work/qtav-player-build-dll/lib/release/av_player.lib	7adba13ab452d728
+1	142	0	CMakeFiles/av_player_autogen	d07c46f9cf25600a
+1	142	0	av_player_autogen/mocs_compilation.cpp	d07c46f9cf25600a
+1	142	0	D:/work/qtav-player-build-dll/release/CMakeFiles/av_player_autogen	d07c46f9cf25600a
+1	142	0	D:/work/qtav-player-build-dll/release/av_player_autogen/mocs_compilation.cpp	d07c46f9cf25600a
+142	1195	7289894250525193	CMakeFiles/av_player.dir/av_player_autogen/mocs_compilation.cpp.obj	b1042537c059a58f
+146	1232	7289894250925244	CMakeFiles/av_player.dir/src/av_player.cpp.obj	85fd8b20064e990b
+1232	1325	7289894251798399	D:/work/qtav-player-build-dll/lib/release/av_player.dll	7adba13ab452d728
+1232	1325	7289894251798399	D:/work/qtav-player-build-dll/lib/release/av_player.lib	7adba13ab452d728
