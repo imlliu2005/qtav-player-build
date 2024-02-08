@@ -1,3 +1,13 @@
+/*
+ * @Description:
+ * @Author: liuning
+ * @LastEditors: liuning
+ * @Date: 2023-12-29
+ * @Copyright: 北京麦迪克斯科技有限公司
+ * @LastEditTime: 2024-1-29
+ * @FilePath: 
+ */
+
 #ifndef AV_PLAYER_H
 #define AV_PLAYER_H
 
@@ -52,8 +62,8 @@ namespace medex {
         private:
             QWidget* video_widget_;                             // 视频播放窗口
             QtAV::VideoCapture* video_capture_;                 // 截图实例
-            std::shared_ptr<QtAV::AVPlayer> player_;            // 播放器接口实例
-            std::shared_ptr<QtAV::VideoOutput> video_output_;   // 视频渲染
+            QtAV::AVPlayer* player_;            // 播放器接口实例
+            QtAV::VideoOutput* video_output_;   // 视频渲染
             QString media_path_;
 
         signals:

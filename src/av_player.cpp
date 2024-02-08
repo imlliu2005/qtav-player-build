@@ -1,18 +1,28 @@
+/*
+ * @Description:
+ * @Author: liuning
+ * @LastEditors: liuning
+ * @Date: 2023-12-29
+ * @Copyright: 北京麦迪克斯科技有限公司
+ * @LastEditTime: 2024-1-29
+ * @FilePath: 
+ */
+
 #include "av_player.h"
 #include <QMessageBox>
 
 namespace medex {
     namespace av_player {
-        av_player::av_player(QString media_path, QWidget *parent) : QWidget(parent)
+        av_player::av_player(QString media_path, QWidget *parent) : QWidget(parent), player_(nullptr)
         {
-            player_ = std::make_shared<QtAV::AVPlayer>(this);
-            video_output_ = std::make_shared<QtAV::VideoOutput>(this);
+            player_ = new QtAV::AVPlayer(this);
+            video_output_ = new QtAV::VideoOutput(this);
             if (!video_output_->widget()) {
                 QMessageBox::warning(0, QString::fromLatin1("QtAV error"), tr("Can not create video renderer"));
                 return;
             }
             media_path_ = media_path;
-            player_->setRenderer(video_output_.get());
+            player_->setRenderer(video_output_);
             video_widget_ = video_output_->widget();
             video_capture_ = player_->videoCapture();
             init_av_player_signals();
@@ -20,16 +30,15 @@ namespace medex {
 
         av_player::~av_player()
         {
-            if(video_capture_) 
-            {
-                delete video_capture_;
-                video_capture_ = nullptr;
+            if (player_) {
+                player_->stop();
+                delete player_;
+                player_ = nullptr;
             }
 
-            if(video_widget_) 
-            {
-                delete video_widget_;
-                video_widget_ = nullptr;
+            if (video_output_) {
+                delete video_output_;
+                video_output_ = nullptr;
             }
         }
 
@@ -167,16 +176,16 @@ namespace medex {
 
         void av_player::init_av_player_signals()
         {
-            connect(player_.get(), &QtAV::AVPlayer::positionChanged, this, &av_player::position_changed_signal);
-            connect(player_.get(), &QtAV::AVPlayer::started, this, &av_player::start_signal);
-            connect(player_.get(), &QtAV::AVPlayer::notifyIntervalChanged, this, &av_player::notify_interval_changed_signal);
-            connect(player_.get(), &QtAV::AVPlayer::seekFinished, this, &av_player::seek_finished_signal);
-            connect(player_.get(), &QtAV::AVPlayer::mediaStatusChanged, this, &av_player::media_status_changed_signal);
-            connect(player_.get(), &QtAV::AVPlayer::bufferProgressChanged, this, &av_player::buffer_progress_changed_signal);
-            connect(player_.get(), &QtAV::AVPlayer::error, this, &av_player::error_signal);
-            connect(player_.get(), &QtAV::AVPlayer::stopped, this, &av_player::stop_signal);
-            connect(player_.get(), &QtAV::AVPlayer::paused, this, &av_player::paused_signal);
-            connect(player_.get(), &QtAV::AVPlayer::speedChanged, this, &av_player::speed_changed_signal);
+            connect(player_, &QtAV::AVPlayer::positionChanged, this, &av_player::position_changed_signal);
+            connect(player_, &QtAV::AVPlayer::started, this, &av_player::start_signal);
+            connect(player_, &QtAV::AVPlayer::notifyIntervalChanged, this, &av_player::notify_interval_changed_signal);
+            connect(player_, &QtAV::AVPlayer::seekFinished, this, &av_player::seek_finished_signal);
+            connect(player_, &QtAV::AVPlayer::mediaStatusChanged, this, &av_player::media_status_changed_signal);
+            connect(player_, &QtAV::AVPlayer::bufferProgressChanged, this, &av_player::buffer_progress_changed_signal);
+            connect(player_, &QtAV::AVPlayer::error, this, &av_player::error_signal);
+            connect(player_, &QtAV::AVPlayer::stopped, this, &av_player::stop_signal);
+            connect(player_, &QtAV::AVPlayer::paused, this, &av_player::paused_signal);
+            connect(player_, &QtAV::AVPlayer::speedChanged, this, &av_player::speed_changed_signal);
         }   
     }
 } // medex
